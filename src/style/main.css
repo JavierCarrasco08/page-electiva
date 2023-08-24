@@ -6,6 +6,7 @@ html {
 }
 :root {
   --primary-color-paragraph: #124d72;
+  --primary-background-quienes-desktop: #091629;
   --primary-color-title: #1d3557;
   --primary-border: #a8dadc;
   --primary-color-a: #214a64;
@@ -34,11 +35,18 @@ body {
   margin-right: auto;
 }
 /* ? Header */
+.hero {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 1rem;
+}
 .hero__ul {
   list-style-type: none;
 }
 .hero__enlace {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--primary-color-a);
   text-decoration: none;
   font-weight: 600;
@@ -78,7 +86,7 @@ main,
 .quienes__paragraph {
   font-size: 1em;
   line-height: 1.5em;
-  max-width: 400px;
+  max-width: 600px;
 }
 .mision__div--two,
 .queremos__div--two {
@@ -98,6 +106,9 @@ main,
   object-position: center;
 }
 /* ! Intro */
+.intro {
+  position: relative;
+}
 .intro__title {
   font-size: 2rem;
   text-decoration: none;
@@ -127,10 +138,6 @@ main,
     background-size: cover;
   }
   80% {
-    background-image: url("./../assets/over-rigth.jpeg");
-    background-size: cover;
-  }
-  100% {
     background-image: url("./../assets/over-front.jpeg");
     background-size: cover;
   }
@@ -177,4 +184,68 @@ main,
   text-align: center;
   font-weight: 700;
   padding-block: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .mision__paragraph,
+  .queremos__paragraph,
+  .quienes__paragraph {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero__ul {
+    display: flex;
+    gap: 1rem;
+  }
+  .intro__title {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--primary-background);
+  }
+  .mision,
+  .queremos,
+  .services,
+  main,
+  .valores {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+  main {
+    width: 100%;
+    background-color: var(--primary-background-quienes-desktop);
+    color: var(--primary-background);
+    text-align: center;
+  }
+  .quienes__paragraph {
+    margin-inline: auto;
+    max-width: 800px;
+  }
+  .quienes__title {
+    color: var(--primary-background);
+  }
+  .mision__div--two,
+  .queremos__div--two {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .queremos__div--two {
+    flex-direction: row-reverse;
+  }
+  .mision__paragraph,
+  .queremos__paragraph,
+  .quienes__paragraph {
+    font-size: 1.4rem;
+  }
+  .services__span,
+  .valores__span {
+    font-size: 1.2rem;
+  }
+  .services__item,
+  .valores__item {
+    flex-basis: 200px;
+    height: 200px;
+  }
 }
