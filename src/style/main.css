@@ -52,7 +52,7 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
-/* ! Misión && queremos && quienes__title && quienes__paragraph && services__title */
+/* ! Misión && queremos && quienes__title && quienes__paragraph && services__title && foo__title  && foo__address*/
 .mision,
 .queremos,
 .services,
@@ -69,9 +69,10 @@ main,
 .services__title,
 .quienes__title,
 .valores__title,
-.intro__title {
+.intro__title,
+.foo__title {
   text-align: center;
-  font-size: 1.8em;
+  font-size: clamp(1.5rem, 1.5rem + 0.5vw, 1.8rem);
   text-decoration: underline;
   color: var(--primary-color-title);
 }
@@ -85,7 +86,7 @@ main,
 .mision__paragraph,
 .queremos__paragraph,
 .quienes__paragraph {
-  font-size: 1em;
+  font-size: clamp(1rem, 1rem + 1vw, 1.2rem);
   line-height: 1.5em;
   max-width: 400px;
 }
@@ -186,25 +187,82 @@ main,
 }
 
 /* > Footer */
-.foo {
-  text-align: center;
-  font-weight: 700;
-  padding-block: 1rem;
+.foo__copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding-block: 0.5rem;
 }
-
+.foo__contact {
+  width: 100%;
+  min-height: 40vh;
+  background-color: var(--primary-background-quienes-desktop);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem;
+}
+.foo__title {
+  color: var(--primary-yellow);
+}
+.foo__address {
+  font-size: clamp(0.7rem, 0.6rem + 1vw, 1rem);
+  color: var(--primary-background);
+}
+.foo__enlace {
+  text-decoration: none;
+}
+.foo__ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foo__div--one,
+.foo__div--two,
+.foo__div--three {
+  flex-basis: 100%;
+}
+.foo__div--one {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.foo__div--three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foo__div--two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* > 600 */
 @media screen and (min-width: 600px) {
   .hero {
     height: 50px;
     justify-content: flex-end;
   }
-  .mision__paragraph,
-  .queremos__paragraph,
-  .quienes__paragraph {
-    font-size: 1.2rem;
+}
+/* > 720px */
+@media screen and (min-width: 720px) {
+  .foo__div--one,
+  .foo__div--three {
+    flex-basis: 350px;
+  }
+  .foo__div--two {
+    order: 2;
+  }
+  .foo__img {
+    display: block;
+    width: 60px;
+    height: auto;
   }
 }
-/* > 820 */
+/* > 768 */
 @media screen and (min-width: 768px) {
   .hero__ul {
     display: flex;
@@ -239,7 +297,7 @@ main,
   }
 }
 
-/* > 920 */
+/* > 912 */
 @media screen and (min-width: 912px) {
   .services__ul {
     display: grid;
@@ -315,5 +373,12 @@ main,
     -moz-transform: translateY(-10px);
     -ms-transform: translateY(-10px);
     -o-transform: translateY(-10px);
+  }
+  .foo__contact {
+    align-items: center;
+  }
+  .foo__div--two {
+    flex-basis: 350px;
+    order: 0;
   }
 }
