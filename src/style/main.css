@@ -13,6 +13,7 @@ html {
   --primary-yellow: #fcbf49;
   --primary-red: #e63946;
   --primary-background: #f1f1f1;
+  --font: 16px;
 }
 
 body {
@@ -36,11 +37,11 @@ body {
 }
 /* ? Header */
 .hero {
-  height: 50px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding-inline: 1rem;
+  text-align: center;
 }
 .hero__ul {
   list-style-type: none;
@@ -86,7 +87,7 @@ main,
 .quienes__paragraph {
   font-size: 1em;
   line-height: 1.5em;
-  max-width: 600px;
+  max-width: 400px;
 }
 .mision__div--two,
 .queremos__div--two {
@@ -149,7 +150,7 @@ main,
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .services__item,
 .valores__item {
@@ -170,6 +171,11 @@ main,
   -ms-border-radius: 0.25rem;
   -o-border-radius: 0.25rem;
   box-shadow: 0 0 0.25rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
 }
 .services__span,
 .valores__span {
@@ -185,32 +191,30 @@ main,
   font-weight: 700;
   padding-block: 1rem;
 }
+
+/* > 600 */
 @media screen and (min-width: 600px) {
+  .hero {
+    height: 50px;
+    justify-content: flex-end;
+  }
   .mision__paragraph,
   .queremos__paragraph,
   .quienes__paragraph {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1200px) {
+/* > 820 */
+@media screen and (min-width: 768px) {
   .hero__ul {
     display: flex;
     gap: 1rem;
   }
-  .intro__title {
-    position: absolute;
-    bottom: 5rem;
-    width: 100%;
-    padding: 0.5rem;
-    background-color: var(--primary-background);
-  }
-  .mision,
-  .queremos,
-  .services,
-  main,
-  .valores {
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+  .mision__div--two,
+  .queremos__div--two {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
   }
   main {
     width: 100%;
@@ -223,7 +227,54 @@ main,
     max-width: 800px;
   }
   .quienes__title {
-    color: var(--primary-background);
+    color: var(--primary-yellow);
+  }
+  .mision,
+  .queremos,
+  .services,
+  main,
+  .valores {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+
+/* > 920 */
+@media screen and (min-width: 912px) {
+  .services__ul {
+    display: grid;
+    grid-template-columns: 160px 160px 160px;
+  }
+}
+/* > 1200 */
+@media screen and (min-width: 1200px) {
+  .hero__enlace::after {
+    content: "";
+    display: block;
+    height: 0.15rem;
+    width: 0;
+    border-radius: 0.15rem;
+    -webkit-border-radius: 0.15rem;
+    -moz-border-radius: 0.15rem;
+    -ms-border-radius: 0.15rem;
+    -o-border-radius: 0.15rem;
+    background-color: var(--primary-color-a);
+    transition: width 0.5s ease;
+    -webkit-transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    -ms-transition: width 0.5s ease;
+    -o-transition: width 0.5s ease;
+  }
+  .hero__enlace:hover::after {
+    width: 100%;
+  }
+
+  .intro__title {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--primary-background);
   }
   .mision__div--two,
   .queremos__div--two {
@@ -239,13 +290,30 @@ main,
   .quienes__paragraph {
     font-size: 1.4rem;
   }
+  .mision__paragraph,
+  .queremos__paragraph {
+    max-width: 600px;
+  }
   .services__span,
   .valores__span {
     font-size: 1.2rem;
   }
-  .services__item,
   .valores__item {
     flex-basis: 200px;
     height: 200px;
+  }
+  .services__ul {
+    grid-template-columns: 200px 200px 200px;
+  }
+  .services__item {
+    height: 200px;
+  }
+  .services__item:hover,
+  .valores__item:hover {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
   }
 }
